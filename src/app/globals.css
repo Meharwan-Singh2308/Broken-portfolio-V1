@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,6 +17,79 @@
   }
 }
 
+@font-face {
+  font-family: virgil;
+  src: url('../../public/Fonts/Virgil.woff2');
+}
+
+@font-face {
+  font-family: amsterdan;
+  src: url('../../public/Fonts/Amsterdam\ Personal\ Use.ttf');
+}
+
+*{
+  font-family: "Gilroy";
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+*::selection{
+  background: rgb(57, 132, 189);
+  color: rgb(255, 255, 255)
+}
+
+@keyframes animateSarkleText {
+  0%{
+    margin-top: -100%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+
+@keyframes fadeAnimation {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+} 
+
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-4px)  }
+  50% { transform: translateY(4px) ; }
+  75% { transform: translateY(-4px)  }
+  100% { transform: translateY(0); }
+}
+
+
+.fadeAnimation{
+  animation: fadeAnimation linear 4s;
+}
+
+.animatedDivByMeText{
+  animation: animateSarkleText ease 2s;
+}
+
+.floating-card {
+  animation: floating 4s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,6 +98,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
 }
 
 @layer utilities {
